@@ -7,9 +7,16 @@ services:
     command: bash -c "npm install express --save && npm run start"
     ports:
       - 3000:3000
-  web:
+  apache:
     build:
       context: .
       dockerfile: ./httpd.dockerfile
     ports:
-      - 8080:80
+      - 8001:80
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./httpd.dockerfile
+    ports:
+      - 8000:80
