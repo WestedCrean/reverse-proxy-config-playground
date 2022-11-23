@@ -17,6 +17,6 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: ./httpd.dockerfile
+      dockerfile: ./nginx.dockerfile
     ports:
       - 8000:80
